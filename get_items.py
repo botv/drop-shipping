@@ -7,7 +7,8 @@ def get_html(url):
 
 
 if __name__ == '__main__':
-	html = get_html('https://www.ebay.com/str/0homveiuhw')
+	url = input('Enter the link to an Ebay store: ')
+	html = get_html(url)
 	soup = BeautifulSoup(html, features='html.parser')
 	for item in soup.find_all(attrs={'class': 's-item__link'}):
 		item_url = item['href']
